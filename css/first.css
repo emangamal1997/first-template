@@ -1,0 +1,337 @@
+:root {
+  --main-color: #10cab7;
+  --secondary-color: #2c4755;
+  --section-padding: 60px;
+  --section-background: #f6f6f6;
+  --main-duration: 0.5s;
+}
+/* global rules */
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Work Sans", sans-serif;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* start special header */
+.special-heading {
+  text-align: center;
+  color: #ebeced;
+  font-weight: 800;
+  font-size: 100px;
+  letter-spacing: -3px;
+  margin: 0;
+}
+.special-heading + p {
+  text-align: center;
+  margin: -30px 0 0;
+  color: #777;
+  font-size: 20px;
+}
+@media (max-width: 768px) {
+  .special-heading {
+    font-size: 60px;
+  }
+  .special-heading + p {
+    margin: -20px 0 0;
+  }
+}
+/* end special header*/
+/* media*/
+/* small*/
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* start header*/
+.header {
+  padding: 20px;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .logo {
+  width: 60px;
+}
+
+.header .links {
+  position: relative;
+}
+.header .links:hover .icon span:nth-child(2) {
+  width: 100%;
+}
+
+.header .links .icon {
+  width: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.header .links .icon span {
+  background-color: #24484f;
+  width: 100%;
+  margin-bottom: 5px;
+  height: 2px;
+}
+.header .links .icon span:nth-child(2) {
+  width: 60%;
+  transition: 0.3s;
+}
+.header .links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 20px;
+  min-width: 200px;
+  background-color: #f6f6f6;
+  top: calc(100% + 15px);
+  display: none;
+  z-index: 1;
+}
+.header .links:hover ul {
+  display: block;
+}
+.header .links ul::before {
+  content: "";
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #f6f6f6 transparent;
+  position: absolute;
+  right: 5px;
+  top: -20px;
+}
+
+.header .links ul li a {
+  text-decoration: none;
+  display: block;
+  padding: 15px;
+  color: #333;
+  transition: 0.3s;
+}
+.header .links ul li a:hover {
+  padding-left: 10px;
+}
+.landing {
+  background-image: url(../images/mountain.jpg);
+  background-size: cover;
+  height: calc(100vh - 64px);
+  position: relative;
+}
+.landing .intro-text {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 320px;
+  max-width: 100%;
+}
+.landing .intro-text h1 {
+  margin: 0px;
+  color: #10cab7;
+}
+.features {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #f6f6f6;
+}
+.features .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+.features .column {
+  text-align: center;
+  padding: 20px;
+}
+.features .column h1 {
+  font-weight: 800;
+  margin: 30px 0;
+}
+.features .column p {
+  line-height: 1.5;
+  color: #777;
+  font-size: 17px;
+}
+.services {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.services-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 30px;
+  margin-top: 100px;
+}
+
+.services-content .srv p {
+  color: #777;
+  font-weight: 300px;
+}
+@media (max-width: 768px) {
+  .services-content .srv {
+    text-align: center;
+  }
+}
+.services-content .image {
+  position: relative;
+  text-align: center;
+}
+.services-content .image::before {
+  content: "";
+  background-color: #2c4755;
+  width: 90px;
+  height: calc(100% + 60px);
+  top: -35px;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+}
+.services .services-content .image img {
+  width: 260px;
+}
+@media (max-width: 1199px) {
+  .services .services-content .col .image {
+    display: none;
+  }
+}
+.portfolio {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #f6f6f6;
+}
+.portfolio-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 30px;
+  margin-top: 100px;
+}
+.portfolio-content img {
+  width: 100%;
+}
+.portfolio-content .text {
+  background-color: white;
+  padding: 20px;
+}
+.portfolio-content .text h3 {
+  margin: 0;
+}
+.portfolio-content .text p {
+  color: #777;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+.about {
+  padding-top: var(--section-padding);
+  padding-bottom: calc(var(--section-padding) + 60px);
+}
+.about .about-content {
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /*كانو لازقين فى بعض فحطيت مسافة بينهم من غلير ما اضطر استخدم مارجن فى العناصر نفسها*/
+}
+
+.about .about-content .image {
+  position: relative;
+  width: 250px;
+  height: 375px;
+}
+.about .about-content .image img {
+  max-width: 100%;
+} /*حجم الصورة الاساسى كبير فكدة هخليه على قد الparent divبس */
+.about .about-content .image::before {
+  content: "";
+  position: absolute;
+  background-color: #ebeced;
+  width: 100px;
+  height: calc(100% + 80px);
+  top: -40px;
+  left: -20px;
+  z-index: -1;
+}
+.about .about-content .image::after {
+  top: -40px;
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 300px;
+  border-left: 80px solid var(--main-color);
+  border-bottom: 80px solid var(--main-color);
+  z-index: -1;
+  right: -150px;
+}
+
+.about .about-content .info {
+  flex-basis: calc(100% - 500px);
+}
+.about .about-content .info p:nth-child(1) {
+  font-weight: bold;
+  line-height: 2;
+  margin-bottom: 50px;
+}
+.about .about-content .info hr {
+  width: 50%;
+  display: inline-block;
+  border-color: var(--main-color);
+}
+.about .about-content .info p:last-of-type {
+  line-height: 2;
+  color: #777;
+}
+.contact {
+  padding-top: var(--section-padding);
+  padding-bottom: calc(var(--section-padding) + 60px);
+  text-align: center;
+  background-color: #f6f6f6;
+}
+.contact-content {
+  padding-top: 60px;
+}
+.contact-content h1 {
+  color: #2c4755;
+}
+.contact .link {
+  text-decoration: none;
+  color: #10cab7;
+  font-size: 35px;
+  font-weight: 800;
+}
+.footer {
+  padding: 15px 10px;
+  text-align: center;
+  background-color: #2c4755;
+  font-size: 18px;
+}
+.footer .footer-content {
+  color: white;
+}
+.footer p {
+  padding: 0px;
+}
+.footer .footer-content span {
+  color: #259489;
+  font-weight: bold;
+}
